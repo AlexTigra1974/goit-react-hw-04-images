@@ -11,7 +11,12 @@ export const ImageGalleryItem = ({
   return (
     <div>
       <li className={css.ImageGalleryItem}>
-        <img src={webformatURL} alt={tags} onClick={onClickImage} />
+        <img
+          className={css.ImageGalleryItem_image}
+          src={webformatURL}
+          alt={tags}
+          onClick={onClickImage}
+        />
       </li>
     </div>
   );
