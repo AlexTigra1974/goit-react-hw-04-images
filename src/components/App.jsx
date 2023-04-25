@@ -52,11 +52,11 @@ export const App = () => {
     if (searchText === '') {
       return;
     }
+    setLoading(true);
+    setTotalHits(0);
 
     const FetchImages = async () => {
       try {
-        setLoading(true);
-        setTotalHits(0);
         const { hits, totalHits } = await FetchApi(searchText, page);
         // console.log(hits);
         // console.log(totalHits);
@@ -65,9 +65,9 @@ export const App = () => {
       } catch (err) {
         console.log(err);
         toast('Something went wrong...');
-        setLoading({ loading: false });
+        setLoading(false);
       } finally {
-        setLoading({ loading: false });
+        setLoading(false);
       }
     };
 
